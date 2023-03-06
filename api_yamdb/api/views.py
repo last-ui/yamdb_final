@@ -10,7 +10,6 @@ from rest_framework.pagination import PageNumberPagination
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework_simplejwt.tokens import AccessToken
-from reviews.models import Category, Comment, Genre, Review, Title
 
 from api.filters import TitleFilter
 from api.mixins import CreateListDestroyViewSet
@@ -20,6 +19,7 @@ from api.serializers import (CategorySerializer, CommentSerializer,
                              SignUpSerializer, TitleSerializer,
                              TitleSerializerCreate, TokenSerializer,
                              UserSerializer)
+from reviews.models import Category, Comment, Genre, Review, Title
 from users.models import User
 
 
