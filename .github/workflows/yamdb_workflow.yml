@@ -29,8 +29,7 @@ jobs:
         run: |
           cd api_yamdb
           python -m flake8
-          cd ..
-          python pytest
+          ../pytest
 
   #build:
   #  runs-on: ubuntu-latest
