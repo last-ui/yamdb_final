@@ -26,7 +26,9 @@ jobs:
       - name: Test with flake8
         run: |
           cd api_yamdb   
-          python -m flake8 
+          python -m flake8
+          cd ..
+          pytest
 
   build_and_push_to_docker_hub:
     name: Push Docker image to Docker Hub
