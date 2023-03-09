@@ -126,9 +126,7 @@ def send_code(request):
             email=email
         )
         User.objects.filter(username=username, email=email).update(
-            confirmation_code=make_password(
-                confirmation_code, salt=None, hasher='default'
-            )
+            confirmation_code=confirmation_code
         )
         mail_subject = 'Код подтверждения на Yamdb.ru'
         message = f'Ваш код подтверждения: {confirmation_code}'
