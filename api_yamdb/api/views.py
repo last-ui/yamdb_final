@@ -1,6 +1,6 @@
 from uuid import uuid4
 
-from django.contrib.auth.hashers import check_password, make_password
+from django.contrib.auth.hashers import check_password
 from django.core.mail import send_mail
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import filters, status, viewsets
