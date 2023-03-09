@@ -122,16 +122,18 @@ class SignUpSerializer(serializers.Serializer):
             user = User.objects.get(email=email)
             if user.username != username:
                 raise serializers.ValidationError(
-                    'Уже username  c данной почтой существует!'
+                    {'email': 'username c таким email существует!'}
                 )
         if User.objects.filter(username=username).exists():
             user = User.objects.get(username=username)
             if user.email != email:
-                raise serializers.ValidationError('Уже существует!')
+                raise serializers.ValidationError(
+                    {'username': 'Уже существует!'}
+                )
         return data
 
     def validate_username(self, value):
-        """Валидация для имя пользователя."""
+        """Валидация для имени пользователя."""
         if value == 'me':
             raise serializers.ValidationError('Me запрещено')
         return value
